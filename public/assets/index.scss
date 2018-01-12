@@ -1,0 +1,332 @@
+$color-background: #F2F3F5;
+$color-brand: #EE621E;
+$color-border: #EEEEEE;
+$color-navbar: #4E4A47;
+$color-text: #4E4A47;
+
+body{
+    background: $color-background;
+    color: $color-text;
+}
+
+.app{
+    // background: pink;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.app-header{
+    background: $color-navbar;
+
+}
+
+.app-header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 55px;
+    margin: auto;
+}
+
+.nav-menu{ margin: auto; }
+
+.sub-app-header{
+    background: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    height: 55px;
+}
+
+.logo-yc{
+    background: url("/images/yc-logo.png") no-repeat;
+    background-size: 80px 80px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 12px;
+    z-index: 2;
+
+     &:after {
+         content: "";
+         background: $color-brand;
+         position: absolute;
+         left: 0;
+         top: 80px;
+         bottom: 0;
+         width: 0;
+         height: 15px;
+         border-bottom: 13px solid white;
+         border-left: 40px solid transparent;
+         border-right: 40px solid transparent;
+     }
+}
+
+.logo-react{
+    background: url(/images/react-logo.svg) no-repeat center;
+    background-size: 60px 60px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    background-color: #222222;
+    top: 12px;
+    z-index: 1;
+
+     &:after {
+         content: "";
+         background: #222222;
+         position: absolute;
+         left: 0;
+         top: 80px;
+         bottom: 0;
+         width: 0;
+         height: 15px;
+         border-bottom: 13px solid white;
+         border-left: 40px solid transparent;
+         border-right: 40px solid transparent;
+     }
+}
+
+@media only screen and (max-width: 850px) {
+    .logo-react, .logo-yc{
+        display: none;
+    }
+}
+
+.main-wrapper{
+    background: white;
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 5px;
+    // display: flex;
+}
+
+// Story
+
+.story{
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid $color-border;
+    &:last-child{ border-bottom: 0 }
+}
+.story-score{
+    color: $color-brand;
+    font-size: 1rem;
+    width: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.story-body{
+    flex: 1;
+}
+.story-title-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.story-title{}
+.story-url{
+    font-size: 0.65rem;
+}
+.story-meta{
+    font-size: 0.65rem;
+    position: relative;
+    & > div{
+        display: inline;
+        margin-right: 5px;
+        // &:last-child{
+        //     margin-right: 0;
+        //     position: absolute;
+        //     right: 0;
+        // }
+    }
+}
+.story-by{}
+.story-time{
+    color: $color-brand;
+}
+.story-comments{
+    margin-right: 0 !important;
+    position: absolute;
+    right: 0;
+}
+
+// User details
+
+.user-details{
+    // background: pink;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    padding: 20px;
+}
+
+.detail-row{
+    display: flex;
+}
+
+.detail-title{
+    font-weight: bold;
+    color: $color-brand;
+    margin-right: 10px;
+}
+
+// Item details
+
+.item-details{
+    padding: 20px;
+}
+
+.item-meta{
+    display: flex;
+}
+
+.item-time{
+    color: $color-brand;
+    margin-right: 5px;
+}
+
+.item-text{
+    margin-top: 15px;
+}
+
+.item-score{
+    margin-right: 5px;
+    &:after{
+        content: '|';
+        margin-left: 5px;
+    }
+}
+
+.item-url{
+    margin-left: 10px ;
+}
+.item-title{}
+
+// Comments
+
+.comments-wrapper{
+    margin-top: 20px;
+}
+
+.comments-header{}
+.comment-header{
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.comments{
+    margin-top: 10px;
+    margin-left: -30px; // Same as comment margin
+    font-size: 14px;
+}
+
+.comment{
+    margin-top: 10px;
+    margin-left: 30px; // Same as comments margin
+}
+
+.comment-by{}
+.comment-time{
+    margin-left: 5px;
+    color: $color-brand;
+}
+.comment-text{
+    margin-top: 3px;
+}
+
+.comment-toggle{
+    cursor: pointer;
+}
+
+// Loading Indicator
+
+.loading-indicator{
+    background: $color-background;
+    justify-content: center;
+    display: flex;
+}
+
+.comment-loading-indicator{
+    background: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.indicator{
+    animation: logo-spin infinite 3s linear;
+    height: 80px;
+}
+
+.comment-indicator{
+    animation: logo-spin infinite 3s linear;
+    height: 24px;
+    margin-left: -10px;
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Over-writing Spectre
+
+.icon{
+    color: $color-brand;
+    margin-right: 5px;
+}
+
+p{
+    margin: inherit;
+}
+
+a{
+    color: #828282;
+    &:hover, &:focus, &:active{
+        color: $color-brand;
+        text-decoration: none;
+        box-shadow: none;
+    }
+}
+
+.btn{
+    color: $color-brand;
+    border-color: $color-brand;
+    &:hover, &:focus{
+        border-color: inherit;
+        background: lighten($color-brand, 35%)
+    }
+}
+
+.btn.btn-link{
+    color: rgba(255, 255, 255, .8);
+    &:hover, &:focus, &:active,
+    &.active{
+        color: $color-brand;
+        border-color: transparent;
+        background: none;
+        box-shadow: none;
+    }
+}
+
+.pagination .page-item a{
+    color: $color-text;
+    &:hover, &:focus{
+        color: $color-brand;
+    }
+}
+
+.pagination .page-item.active a{
+    background: $color-brand;
+    &:hover, &:focus{
+        color: white;
+    }
+}
+
+.pagination .page-item{
+    cursor: pointer;
+}
